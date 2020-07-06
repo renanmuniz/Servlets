@@ -1,5 +1,7 @@
 <%@ page import="br.com.alura.gerenciador.servlet.Empresa" %>
 <%@ page import="java.util.List" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%--
   Created by IntelliJ IDEA.
   User: renan
@@ -9,24 +11,15 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <title>Title</title>
-</head>
-<body>
-
-
-<h1>Empresas cadastradas:</h1>
-<ul>
-    <%
-        List<Empresa> lista = (List)request.getAttribute("empresas");
-        for (Empresa empresa: lista) {
-     %>
-        <li><%= empresa.getNome() %></li>
-    <%
-        }
-    %>
-</ul>
-
-
-</body>
+    <head>
+        <title>Title</title>
+    </head>
+    <body>
+        <h1>Empresas cadastradas:</h1>
+        <ul>
+            <c:forEach items="${empresas}" var="empresa">
+                <li>${empresa.nome} - <fmt:formatDate value="${empresa.dataAbertura}" pattern="dd/MM/yyyy"/> </li>
+            </c:forEach>
+        </ul>
+    </body>
 </html>
