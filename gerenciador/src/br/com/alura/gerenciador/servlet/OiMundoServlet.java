@@ -10,8 +10,12 @@ import java.io.PrintWriter;
 import java.util.Calendar;
 import java.util.Date;
 
-@WebServlet(urlPatterns = "/oi")
+@WebServlet(urlPatterns = "/oi", loadOnStartup=1)
 public class OiMundoServlet extends HttpServlet {
+
+    public OiMundoServlet() {
+        System.out.println("Criando Oi Mundo Servlet");
+    }
 
     @Override
     public void service(ServletRequest req, ServletResponse resp) throws IOException {
