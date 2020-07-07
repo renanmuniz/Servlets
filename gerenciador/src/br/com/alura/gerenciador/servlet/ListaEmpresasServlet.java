@@ -13,7 +13,7 @@ import java.util.List;
 @WebServlet("/listaEmpresas")
 public class ListaEmpresasServlet extends HttpServlet {
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("chamando ListaEmpresasServlet.java");
 
         Banco banco = new Banco();
