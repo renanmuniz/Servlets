@@ -1,20 +1,17 @@
-package br.com.alura.gerenciador.servlet;
+package br.com.alura.gerenciador.acao;
+
+import br.com.alura.gerenciador.modelo.Banco;
+import br.com.alura.gerenciador.modelo.Empresa;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
-@WebServlet("/listaEmpresas")
-public class ListaEmpresasServlet extends HttpServlet {
-
-    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("chamando ListaEmpresasServlet.java");
+public class ListaEmpresas {
+    public void executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         Banco banco = new Banco();
         List<Empresa> lista = banco.getEmpresas();
