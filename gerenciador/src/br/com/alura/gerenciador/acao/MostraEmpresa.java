@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-public class MostraEmpresa {
-    public void executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+public class MostraEmpresa implements Acao{
+    public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String paramId = request.getParameter("id");
         Integer id = Integer.valueOf(paramId);
@@ -22,7 +22,6 @@ public class MostraEmpresa {
         System.out.println("Alterando empresa: " + empresa.getNome());
 
         request.setAttribute("empresa",empresa);
-        RequestDispatcher rd = request.getRequestDispatcher("/formAlteraEmpresa.jsp");
-        rd.forward(request,response);
+        return "forward:formAlteraEmpresa.jsp";
     }
 }
