@@ -15,10 +15,12 @@
         <title>Title</title>
     </head>
     <body>
+        <c:import url="logout-parcial.jsp"/>
+        <br>
         <c:if test="${not empty empresa}">
             Empresa ${ empresa } cadastrada com sucesso!
         </c:if>
-
+        <br>
         <h1>Empresas cadastradas:</h1>
         <ul>
             <c:forEach items="${empresas}" var="empresa">

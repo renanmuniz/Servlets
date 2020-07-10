@@ -7,7 +7,9 @@
     <title>Title</title>
 </head>
 <body>
-
+<br>
+<c:import url="logout-parcial.jsp"/>
+<br>
 
 
 <form action="${linkServletNovaEmpresa}" method="post">

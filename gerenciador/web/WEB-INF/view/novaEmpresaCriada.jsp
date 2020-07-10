@@ -13,7 +13,9 @@
     <title>novaEmpresaCriada.jsp</title>
 </head>
 <body>
-
+<br>
+<c:import url="logout-parcial.jsp"/>
+<br>
     <c:if test="${not empty empresa}">
         Empresa ${ empresa } cadastrada com sucesso!
     </c:if>
