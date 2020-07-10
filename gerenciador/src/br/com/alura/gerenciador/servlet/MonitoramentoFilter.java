@@ -6,6 +6,15 @@ import java.io.IOException;
 
 @WebFilter("/entrada")
 public class MonitoramentoFilter implements Filter {
+    @Override
+    public void init(FilterConfig filterConfig) throws ServletException {
+
+    }
+
+    @Override
+    public void destroy() {
+
+    }
 
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws ServletException, IOException {

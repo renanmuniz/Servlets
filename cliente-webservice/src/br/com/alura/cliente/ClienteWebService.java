@@ -8,7 +8,7 @@ public class ClienteWebService {
         try {
             String conteudo = Request
                     .Post("http://localhost:8080/web_war_exploded/empresas")
-                    .addHeader("Accept","application/json")
+                    .addHeader("Accept","application/xml")
                     .execute()
                     .returnContent()
                     .asString();
